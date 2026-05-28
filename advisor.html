@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harito | Dressing Advisor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html#top" aria-label="Harito home">
+        <span class="brand-mark">ハリト</span>
+        <span>Harito</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html#collections">Collections</a>
+        <a href="advisor.html">Dressing Advisor</a>
+        <a href="orders.html">Your Orders</a>
+      </nav>
+      <a class="header-chip" href="index.html#collections">Shop Catalog</a>
+    </header>
+
+    <main>
+      <section class="page-hero advisor-hero">
+        <p class="eyebrow">Made to elevate your fashion and style</p>
+        <h1>Dressing-up advisor</h1>
+        <p>
+          Enter your outfit details and Harito will suggest colour combinations, clothing pairings, accessories,
+          and products that match what is available in the catalog.
+        </p>
+      </section>
+
+      <section class="style-panel">
+        <div class="advisor-layout">
+          <form class="advisor-form" id="advisorPageForm">
+            <label>
+              Gender
+              <select id="advisorGender">
+                <option value="men">Men</option>
+                <option value="women">Ladies</option>
+              </select>
+            </label>
+            <label>
+              Pants type
+              <select id="advisorPants">
+                <option>Jeans</option>
+                <option>Loose fit jeans</option>
+                <option>Baggy jeans</option>
+                <option>Shorts</option>
+              </select>
+            </label>
+            <label>
+              Pants colour
+              <input id="advisorPantsColor" type="text" placeholder="Indigo, black, grey..." />
+            </label>
+            <label>
+              Top type
+              <select id="advisorTop">
+                <option>Shirt</option>
+                <option>T shirt</option>
+                <option>Baggy t shirt</option>
+                <option>Top</option>
+                <option>Blazer</option>
+                <option>Dress</option>
+              </select>
+            </label>
+            <label>
+              Top colour
+              <input id="advisorTopColor" type="text" placeholder="White, olive, pink..." />
+            </label>
+            <label>
+              Shoe type
+              <select id="advisorShoes">
+                <option>Sneaker</option>
+                <option>Sports shoes</option>
+                <option>Footwear</option>
+              </select>
+            </label>
+            <label>
+              Shoe colour
+              <input id="advisorShoeColor" type="text" placeholder="White, black, tan..." />
+            </label>
+            <label>
+              Accessory type
+              <select id="advisorAccessory">
+                <option>Minimal watch</option>
+                <option>Crossbody bag</option>
+                <option>Cap</option>
+                <option>Belt</option>
+                <option>Sunglasses</option>
+              </select>
+            </label>
+            <button class="primary-link advisor-submit" type="submit">Build my outfit</button>
+          </form>
+
+          <div class="advisor-result" id="advisorPageResult" aria-live="polite">
+            <h3>Your style plan</h3>
+            <p>
+              Add your outfit details to get a clean recommendation based on practical colour matching and available
+              Harito product types.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="advisor.js"></script>
+  </body>
+</html>

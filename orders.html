@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harito | Your Orders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html#top" aria-label="Harito home">
+        <span class="brand-mark">ハリト</span>
+        <span>Harito</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html#collections">Collections</a>
+        <a href="advisor.html">Dressing Advisor</a>
+        <a href="orders.html">Your Orders</a>
+      </nav>
+      <a class="header-chip" href="index.html#returns">Return Form</a>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Buyer account</p>
+        <h1>Your orders</h1>
+        <p>
+          Buyers do not need a username and password in this first version. A backend version will identify orders
+          through verified email, phone, or payment/order ID.
+        </p>
+      </section>
+
+      <section class="orders-panel">
+        <article class="order-card">
+          <img
+            src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=900&q=80"
+            alt="Relaxed Linen Blend Shirt"
+          />
+          <div>
+            <span class="order-status">Sample order</span>
+            <h2>Relaxed Linen Blend Shirt</h2>
+            <p>Order ID: H-1001 · Vendor: Zara India · Status: Delivered</p>
+            <a class="primary-link" href="https://www.zara.com/in/" target="_blank" rel="noopener noreferrer">
+              Return on supplier website
+            </a>
+          </div>
+        </article>
+
+        <article class="order-card">
+          <img
+            src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80"
+            alt="Printed Midi Dress"
+          />
+          <div>
+            <span class="order-status">Sample order</span>
+            <h2>Printed Midi Dress</h2>
+            <p>Order ID: H-1002 · Vendor: Tata CLiQ · Status: In transit</p>
+            <a class="primary-link" href="https://www.tatacliq.com/" target="_blank" rel="noopener noreferrer">
+              Return on supplier website
+            </a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

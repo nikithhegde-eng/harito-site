@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harito Admin | Orders & Insights</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header class="admin-header">
+      <a class="brand" href="#top" aria-label="Harito admin home">
+        <span class="brand-mark">ハリト</span>
+        <span>Harito Admin</span>
+      </a>
+      <nav aria-label="Admin navigation">
+        <a href="#orders">Orders</a>
+        <a href="#returns">Returns</a>
+        <a href="#insights">Insights</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="admin-hero">
+        <div>
+          <p class="eyebrow">Private admin website</p>
+          <h1>Orders, returns, and business insights for Harito.</h1>
+          <p>
+            This dashboard is separated from the buyer website. It is ready to connect to a backend for real orders,
+            live notifications, payment status, delivery tracking, and business analytics.
+          </p>
+        </div>
+        <aside class="notification-card">
+          <span>New order notifications</span>
+          <strong>Ready for backend</strong>
+          <p>Email, push, or dashboard alerts can be connected once orders are stored in a database.</p>
+        </aside>
+      </section>
+
+      <section class="metrics-grid" id="insights" aria-label="Business insights">
+        <article>
+          <span>Total orders</span>
+          <strong>128</strong>
+          <p>Sample monthly order volume</p>
+        </article>
+        <article>
+          <span>Gross sales</span>
+          <strong>Rs. 3.8L</strong>
+          <p>Before shipping, fees, returns, and tax</p>
+        </article>
+        <article>
+          <span>Return rate</span>
+          <strong>7.4%</strong>
+          <p>Watch size and delivery issues</p>
+        </article>
+        <article>
+          <span>Top vendor</span>
+          <strong>Tata CLiQ</strong>
+          <p>Highest sample conversion source</p>
+        </article>
+      </section>
+
+      <section class="admin-section" id="orders">
+        <div class="section-heading">
+          <p class="eyebrow">Order details</p>
+          <h2>Recent buyer orders</h2>
+        </div>
+        <div class="order-table" role="table" aria-label="Recent buyer orders">
+          <div class="table-row table-head" role="row">
+            <span>Order</span>
+            <span>Buyer</span>
+            <span>Product</span>
+            <span>Vendor</span>
+            <span>Status</span>
+            <span>Total</span>
+          </div>
+          <div class="table-row" role="row">
+            <span>H-1001</span>
+            <span>buyer1@example.com</span>
+            <span>Relaxed Linen Blend Shirt</span>
+            <span>Zara India</span>
+            <span class="status delivered">Delivered</span>
+            <span>Rs. 1,990</span>
+          </div>
+          <div class="table-row" role="row">
+            <span>H-1002</span>
+            <span>buyer2@example.com</span>
+            <span>Printed Midi Dress</span>
+            <span>Tata CLiQ</span>
+            <span class="status transit">In transit</span>
+            <span>Rs. 1,499</span>
+          </div>
+          <div class="table-row" role="row">
+            <span>H-1003</span>
+            <span>buyer3@example.com</span>
+            <span>Retro Street Sneakers</span>
+            <span>Amazon India</span>
+            <span class="status pending">Payment pending</span>
+            <span>Rs. 2,999</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-section" id="returns">
+        <div class="section-heading">
+          <p class="eyebrow">Returns</p>
+          <h2>Return requests</h2>
+        </div>
+        <div class="return-grid">
+          <article>
+            <span>H-1001</span>
+            <h3>Size exchange requested</h3>
+            <p>Buyer wants to exchange shirt from M to L. Route to supplier return page.</p>
+          </article>
+          <article>
+            <span>H-1002</span>
+            <h3>Delivery issue</h3>
+            <p>Buyer reported delayed delivery. Follow up with shipping partner after backend integration.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
