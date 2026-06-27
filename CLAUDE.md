@@ -4,6 +4,14 @@
 
 Harito is a managed fashion commerce website. The buyer site lets shoppers browse products, add items to a Harito cart, create Harito order records, look up orders, and request returns. The admin site reads backend analytics for orders, payment status, vendor fulfillment, delivery, notifications, returns, and automation tasks.
 
+Before making changes, read:
+
+- `PROJECT_CONTEXT.md`
+- `HANDOFF.md`
+- `PROJECT_LOG.md`
+- `SYNC_PROTOCOL.md`
+- `BACKEND_SETUP.md`
+
 ## Run Locally
 
 ```bash
@@ -31,8 +39,9 @@ Admin dashboard: `http://localhost:4173/admin`
 - Do not reintroduce vendor-site checkout redirects.
 - Do not collect live payments until a verified payment provider or UPI setup is configured.
 - Do not commit real customer/order data. `data/*.json` is intentionally ignored.
+- Do not commit raw Codex or Claude chats, OTPs, passwords, tokens, or payment details.
 - Before editing, inspect nearby files and reuse existing styles/helpers.
-- After changes, summarize files changed, what changed, and how to test.
+- After changes, update `HANDOFF.md` and `PROJECT_LOG.md`, then summarize files changed, what changed, and how to test.
 
 ## Validation
 

@@ -6,3 +6,9 @@ data/*.json
 CLAUDEcode.md/
 demo-cart.html
 demo-order-placed.html
+.env
+.env.*
+chat-exports/
+local-chat-logs/
+codex-private/
+claude-private/
