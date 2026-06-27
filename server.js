@@ -72,7 +72,7 @@ function paymentProviderStatus() {
       provider: "razorpay",
       configured: true,
       liveCollectionEnabled: process.env.HARITO_ENABLE_LIVE_PAYMENTS === "true",
-      note: "Razorpay keys are present. Keep HARITO_ENABLE_LIVE_PAYMENTS=false until vendor terms and legal pages are ready."
+      note: "Legacy Razorpay keys are present, but the active storefront direction is affiliate links. Keep live collection disabled unless direct commerce is explicitly restarted."
     };
   }
 
@@ -81,7 +81,7 @@ function paymentProviderStatus() {
       provider: "manual_upi",
       configured: true,
       liveCollectionEnabled: process.env.HARITO_ENABLE_LIVE_PAYMENTS === "true",
-      note: "UPI intent can be generated, but payment must be manually verified before fulfillment."
+      note: "Legacy UPI setup is present, but the active storefront direction is affiliate links. Keep live collection disabled unless direct commerce is explicitly restarted."
     };
   }
 
@@ -89,7 +89,7 @@ function paymentProviderStatus() {
     provider: "not_configured",
     configured: false,
     liveCollectionEnabled: false,
-    note: "Add Razorpay keys or HARITO_UPI_ID after vendor terms are confirmed."
+    note: "Direct payment collection is paused. Use approved affiliate or partner links for checkout."
   };
 }
 
