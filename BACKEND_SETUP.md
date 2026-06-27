@@ -31,5 +31,7 @@ No live payment is collected unless payment configuration is added. Optional env
 - `HARITO_UPI_ID`: creates a UPI intent for manual verification.
 - `HARITO_ADMIN_TOKEN`: protects admin API routes.
 - `HARITO_WEBHOOK_SECRET`: protects the payment webhook endpoint.
+- `RAZORPAY_KEY_ID` and `RAZORPAY_KEY_SECRET`: prepare Razorpay integration.
+- `DATABASE_URL`: production database connection placeholder.
 
 Before public launch, connect a verified payment gateway, add legal shipping/return/refund pages, and confirm vendor catalog, commission, settlement, fulfillment, and return terms.

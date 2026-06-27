@@ -6,4 +6,5 @@
 - Updated the storefront to keep shoppers inside Harito cart/checkout instead of redirecting to vendor websites.
 - Added `CLAUDE.md`, `PROJECT_CONTEXT.md`, `HANDOFF.md`, and `SYNC_PROTOCOL.md` so Codex and Claude can share project context through GitHub without storing raw chats.
 - Added privacy rules to avoid committing raw chat exports, secrets, OTPs, payment data, or real buyer order data.
-
+- Started the six launch assignments: restored `server.js`, added deployment scaffolding, `.env.example`, database setup notes and SQL schema, payment setup notes, vendor catalog onboarding template, and admin token login flow.
+- Verified `/api/health`, `/api/payments/config`, admin session behavior, protected admin mode, and `npm run check`.

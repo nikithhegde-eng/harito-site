@@ -8,6 +8,7 @@ demo-cart.html
 demo-order-placed.html
 .env
 .env.*
+!.env.example
 chat-exports/
 local-chat-logs/
 codex-private/
