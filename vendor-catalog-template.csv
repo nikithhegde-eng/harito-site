@@ -1,0 +1,2 @@
+vendor,brand,sku,title,description,category,type,gender,colour,sizes,mrp,selling_price,stock_status,stock_quantity,image_1,image_2,image_3,product_url,hsn,gst_rate,return_eligible,delivery_owner,commission_rate,payout_timing,usage_rules
+Example Vendor,Example Brand,EX-001,Example Linen Shirt,Short product description,Casual,Shirt,men,White,"S|M|L",2499,1899,in_stock,25,https://example.com/image1.jpg,https://example.com/image2.jpg,https://example.com/image3.jpg,https://example.com/product,6205,12,true,vendor_direct,15,weekly,Approved for Harito catalog and AI styling

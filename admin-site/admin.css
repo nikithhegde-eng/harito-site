@@ -70,6 +70,48 @@ nav a {
   font-weight: 750;
 }
 
+.admin-login-panel {
+  background: var(--ink);
+  color: #fff;
+  padding: 24px clamp(18px, 4vw, 56px);
+}
+
+.admin-login-panel[hidden] {
+  display: none;
+}
+
+.admin-login-panel form {
+  align-items: end;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px) auto;
+}
+
+.admin-login-panel h2 {
+  margin-bottom: 8px;
+}
+
+.admin-login-panel p {
+  color: rgba(255, 250, 241, 0.72);
+  margin-bottom: 0;
+}
+
+.admin-login-panel label {
+  color: rgba(255, 250, 241, 0.78);
+  display: grid;
+  font-size: 0.78rem;
+  font-weight: 900;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.admin-login-panel input {
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  font: inherit;
+  min-height: 42px;
+  padding: 10px;
+}
+
 .admin-hero {
   background:
     linear-gradient(90deg, rgba(32, 38, 35, 0.94), rgba(32, 38, 35, 0.58)),
@@ -284,6 +326,7 @@ h1 {
 
 @media (max-width: 980px) {
   .admin-hero,
+  .admin-login-panel form,
   .metrics-grid,
   .automation-grid,
   .return-grid {

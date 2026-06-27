@@ -20,6 +20,22 @@
       </nav>
     </header>
 
+    <section class="admin-login-panel" id="adminLoginPanel" hidden>
+      <form id="adminLoginForm">
+        <div>
+          <p class="eyebrow">Admin access</p>
+          <h2>Enter admin token</h2>
+          <p>Use the token configured in `HARITO_ADMIN_TOKEN` for this backend.</p>
+        </div>
+        <label>
+          Admin token
+          <input name="token" type="password" autocomplete="current-password" required />
+        </label>
+        <button class="admin-action" type="submit">Unlock dashboard</button>
+        <p id="adminLoginMessage"></p>
+      </form>
+    </section>
+
     <main id="top">
       <section class="admin-hero">
         <div>

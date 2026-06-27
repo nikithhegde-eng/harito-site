@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: harito-commerce
+    env: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HARITO_ENABLE_LIVE_PAYMENTS
+        value: "false"
+      - key: HARITO_ADMIN_TOKEN
+        sync: false
+      - key: HARITO_WEBHOOK_SECRET
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false

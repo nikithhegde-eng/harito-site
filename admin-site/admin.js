@@ -15,6 +15,10 @@ const returnGrid = document.querySelector("#returnGrid");
 const automationGrid = document.querySelector("#automationGrid");
 const automationMessage = document.querySelector("#automationMessage");
 const runAutomations = document.querySelector("#runAutomations");
+const adminLoginPanel = document.querySelector("#adminLoginPanel");
+const adminLoginForm = document.querySelector("#adminLoginForm");
+const adminLoginMessage = document.querySelector("#adminLoginMessage");
+const ADMIN_TOKEN_KEY = "haritoAdminToken";
 
 function money(value) {
   return formatter.format(Number(value || 0));
@@ -108,6 +112,7 @@ function renderAutomations(tasks) {
 }
 
 function renderDashboard(data) {
+  adminLoginPanel.hidden = true;
   metricTotalOrders.textContent = data.summary.totalOrders;
   metricGrossSales.textContent = money(data.summary.grossSales);
   metricReturnRate.textContent = `${data.summary.returnRate}%`;
@@ -125,18 +130,22 @@ function renderDashboard(data) {
 }
 
 async function loadDashboard() {
-  const token = localStorage.getItem("haritoAdminToken");
+  const token = localStorage.getItem(ADMIN_TOKEN_KEY);
   const response = await fetch("/api/admin/analytics", {
     headers: token ? { "x-admin-token": token } : {}
   });
   const data = await response.json();
+  if (response.status === 401) {
+    adminLoginPanel.hidden = false;
+    throw new Error("Admin token required.");
+  }
   if (!response.ok) throw new Error(data.error || "Admin data could not be loaded.");
   renderDashboard(data);
 }
 
 runAutomations.addEventListener("click", async () => {
   automationMessage.textContent = "Running review...";
-  const token = localStorage.getItem("haritoAdminToken");
+  const token = localStorage.getItem(ADMIN_TOKEN_KEY);
   try {
     const response = await fetch("/api/admin/automations/run", {
       method: "POST",
@@ -149,6 +158,27 @@ runAutomations.addEventListener("click", async () => {
     await loadDashboard();
   } catch (error) {
     automationMessage.textContent = error.message;
+  }
+});
+
+adminLoginForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  adminLoginMessage.textContent = "Checking token...";
+  const token = new FormData(adminLoginForm).get("token");
+
+  try {
+    const response = await fetch("/api/admin/session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token })
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || "Admin token invalid.");
+    localStorage.setItem(ADMIN_TOKEN_KEY, token);
+    adminLoginMessage.textContent = "";
+    await loadDashboard();
+  } catch (error) {
+    adminLoginMessage.textContent = error.message;
   }
 });
 

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "check": "node --check server.js && node --check app.js && node --check cart.js && node --check orders.js && node --check order-placed.js && node --check admin-site/admin.js"
   },
   "engines": {
     "node": ">=18"
