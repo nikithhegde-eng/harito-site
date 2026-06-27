@@ -1,19 +1,21 @@
 # Harito Payment Setup
 
-Payments are intentionally not live by default.
+Payments are intentionally not live. The active business direction is affiliate-first product discovery, where buyers leave Harito through approved partner links and complete checkout with the seller.
 
-## Supported First Options
+## Current Direction
 
-1. Manual UPI verification using `HARITO_UPI_ID`.
-2. Razorpay setup using `RAZORPAY_KEY_ID` and `RAZORPAY_KEY_SECRET`.
+- Do not proceed with Razorpay, UPI, or direct Harito payment collection.
+- Use approved affiliate, reseller, marketplace, or brand partner links.
+- Do not invent tracking IDs; replace current destination URLs only after approval.
+- Use free Unsplash fashion photos as preview visuals until official product image rights are approved.
 
-Keep this disabled until launch approval:
+Keep live payment collection disabled:
 
 ```bash
 HARITO_ENABLE_LIVE_PAYMENTS=false
 ```
 
-## Before Turning Payments On
+## If Direct Commerce Is Restarted Later
 
 - Confirm vendor catalog usage rights.
 - Confirm commission or margin per order.
@@ -22,7 +24,7 @@ HARITO_ENABLE_LIVE_PAYMENTS=false
 - Publish shipping, return, refund, privacy, and terms pages.
 - Set `HARITO_WEBHOOK_SECRET` and verify payment webhooks.
 
-## Current Backend Behavior
+## Legacy Backend Behavior
 
 - `/api/health` shows payment configuration status.
 - `/api/payments/config` shows the active payment mode.

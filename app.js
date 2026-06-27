@@ -25,42 +25,6 @@ const homeReturnForm = document.querySelector("#homeReturnForm");
 const homeReturnMessage = document.querySelector("#homeReturnMessage");
 
 let activeGender = "all";
-const CART_KEY = "haritoCart";
-
-function readCart() {
-  try {
-    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
-  } catch (error) {
-    return [];
-  }
-}
-
-function writeCart(cart) {
-  localStorage.setItem(CART_KEY, JSON.stringify(cart));
-  updateCartCount();
-}
-
-function updateCartCount() {
-  const count = readCart().reduce((sum, item) => sum + item.quantity, 0);
-  document.querySelectorAll('a[href="cart.html"]').forEach((link) => {
-    link.textContent = count ? `Cart (${count})` : "Cart";
-  });
-}
-
-function addToCart(productId, size) {
-  const product = products.find((item) => item.id === productId);
-  if (!product || !product.sizes.includes(size)) return null;
-
-  const cart = readCart();
-  const existing = cart.find((item) => item.id === productId && item.size === size);
-  if (existing) {
-    existing.quantity = Math.min(existing.quantity + 1, 5);
-  } else {
-    cart.push({ id: productId, size, quantity: 1 });
-  }
-  writeCart(cart);
-  return product;
-}
 
 function money(value) {
   return formatter.format(value);
@@ -72,10 +36,6 @@ function discount(product) {
 
 function sizePills(sizes) {
   return sizes.map((size) => `<span class="size-pill">${size}</span>`).join("");
-}
-
-function sizeOptions(sizes) {
-  return sizes.map((size) => `<option value="${size}">${size}</option>`).join("");
 }
 
 function optionList(items, element) {
@@ -102,6 +62,10 @@ function renderCategoryPills() {
     categoryButton("all", "All", categoryFilter.value === "all"),
     ...categories.map((category) => categoryButton(category, category, categoryFilter.value === category))
   ].join("");
+}
+
+function affiliateUrl(product) {
+  return product.affiliateUrl || product.buyUrl || "#";
 }
 
 function imageThumbs(product) {
@@ -142,7 +106,7 @@ function productCard(product) {
       </div>
       <div class="product-body">
         <div class="product-tags">
-          <span class="checkout-tag">Harito order flow</span>
+          <span class="checkout-tag">Affiliate link</span>
           <span>${product.brand}</span>
           <span>${product.gender}</span>
           <span>${product.category}</span>
@@ -162,21 +126,20 @@ function productCard(product) {
           <span><strong>Gender:</strong> ${product.gender}</span>
           <span><strong>Type:</strong> ${product.type}</span>
           <span><strong>Colour:</strong> ${product.color}</span>
-          <span><strong>Partnership:</strong> ${product.network}</span>
+          <span><strong>Affiliate route:</strong> ${product.network}</span>
         </div>
         <div class="size-section">
-          <label class="size-label" for="size-${product.id}">Select size</label>
-          <select class="size-select" id="size-${product.id}" data-size-select="${product.id}">
-            ${sizeOptions(product.sizes)}
-          </select>
+          <span class="size-label">Available sizes</span>
           <div class="size-list">${sizePills(product.sizes)}</div>
         </div>
         <p class="product-supplier">
-          Harito creates the order record here and tracks payment, vendor fulfillment, delivery, and returns in its backend.
+          Harito shows curated affiliate-style links and uses free Unsplash fashion photos until approved product feeds are available.
         </p>
         <div class="product-actions">
-          <button class="buy-link" type="button" data-add-to-cart="${product.id}">Add to cart</button>
-          <a class="cart-link" href="cart.html">View cart</a>
+          <a class="buy-link affiliate-cta" href="${affiliateUrl(product)}" target="_blank" rel="sponsored noopener noreferrer">
+            View deal
+          </a>
+          <span class="cart-link affiliate-note">Partner site</span>
         </div>
       </div>
     </article>
@@ -293,23 +256,6 @@ document.addEventListener("keydown", (event) => {
 });
 
 productGrid.addEventListener("click", (event) => {
-  const addButton = event.target.closest("[data-add-to-cart]");
-  if (addButton) {
-    const productId = addButton.dataset.addToCart;
-    const sizeSelect = productGrid.querySelector(`[data-size-select="${productId}"]`);
-    const product = addToCart(productId, sizeSelect?.value);
-    if (!product) return;
-
-    const originalText = addButton.textContent;
-    addButton.textContent = "Added";
-    addButton.disabled = true;
-    window.setTimeout(() => {
-      addButton.textContent = originalText;
-      addButton.disabled = false;
-    }, 1200);
-    return;
-  }
-
   const thumbButton = event.target.closest("[data-thumb]");
   if (!thumbButton) return;
 
@@ -356,4 +302,3 @@ optionList(products.map((product) => product.brand), brandFilter);
 optionList(products.map((product) => product.color), colorFilter);
 optionList(products.map((product) => product.type), typeFilter);
 renderProducts();
-updateCartCount();

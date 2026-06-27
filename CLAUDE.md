@@ -2,7 +2,7 @@
 
 ## Project Context
 
-Harito is a managed fashion commerce website. The buyer site lets shoppers browse products, add items to a Harito cart, create Harito order records, look up orders, and request returns. The admin site reads backend analytics for orders, payment status, vendor fulfillment, delivery, notifications, returns, and automation tasks.
+Harito is currently an affiliate-first fashion discovery website. The buyer site lets shoppers browse products, use the dressing advisor, and open approved partner or affiliate links. The older Harito cart/order backend remains in the repo for future direct-commerce work, but Razorpay, UPI, and direct payment collection are paused.
 
 Before making changes, read:
 
@@ -25,9 +25,9 @@ Admin dashboard: `http://localhost:4173/admin`
 
 - `server.js`: Node backend and API routes.
 - `catalog.js`: shared product catalog used by frontend and backend.
-- `app.js`: homepage catalog filters and add-to-cart behavior.
-- `cart.js`: checkout form and order creation.
-- `orders.js`: buyer order lookup and return requests.
+- `app.js`: homepage catalog filters, image switching, and affiliate-link actions.
+- `cart.js`: legacy checkout form and order creation; keep dormant unless direct commerce is explicitly restarted.
+- `orders.js`: legacy buyer order lookup and return requests.
 - `admin-site/admin.js`: admin analytics and automation queue.
 - `BACKEND_SETUP.md`: backend setup and payment configuration notes.
 - `VENDOR_TRACKER.md`: vendor communication status.
@@ -36,8 +36,10 @@ Admin dashboard: `http://localhost:4173/admin`
 ## Rules For Changes
 
 - Keep the existing Harito visual style and mobile responsiveness.
-- Do not reintroduce vendor-site checkout redirects.
-- Do not collect live payments until a verified payment provider or UPI setup is configured.
+- Keep the storefront affiliate-first: product cards should open approved partner or affiliate links.
+- Use free Unsplash fashion photos as preview visuals until official product image rights are approved.
+- Do not invent affiliate tracking IDs.
+- Do not proceed with Razorpay, UPI, or direct Harito payment work unless Nikith explicitly restarts direct commerce.
 - Do not commit real customer/order data. `data/*.json` is intentionally ignored.
 - Do not commit raw Codex or Claude chats, OTPs, passwords, tokens, or payment details.
 - Before editing, inspect nearby files and reuse existing styles/helpers.

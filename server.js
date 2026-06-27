@@ -151,8 +151,10 @@ function publicProduct(product) {
     network: product.network,
     sizes: product.sizes,
     images: product.images,
-    checkoutStatus: "harito_order_request_enabled",
-    fulfillmentModel: "vendor_terms_pending"
+    affiliateUrl: product.affiliateUrl || product.buyUrl,
+    buyUrl: product.buyUrl,
+    checkoutStatus: "affiliate_partner_link_enabled",
+    fulfillmentModel: "partner_site_checkout"
   };
 }
 

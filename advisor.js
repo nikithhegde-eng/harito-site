@@ -3,7 +3,7 @@ const advisorProducts = (window.HARITO_CATALOG || []).map((product) => ({
   gender: product.gender,
   type: product.type,
   color: product.color,
-  url: `cart.html?add=${encodeURIComponent(product.id)}`
+  url: product.affiliateUrl || product.buyUrl || "#"
 }));
 
 const form = document.querySelector("#advisorPageForm");
@@ -60,7 +60,13 @@ form.addEventListener("submit", (event) => {
     <p>${colourAdvice(topColor, pantsColor, shoeColor)}</p>
     <div class="advisor-products">
       ${matches
-        .map((product) => `<a href="${product.url}">${product.name} · ${product.color}</a>`)
+        .map(
+          (product) => `
+            <a href="${product.url}" target="_blank" rel="sponsored noopener noreferrer">
+              ${product.name} · ${product.color}
+            </a>
+          `
+        )
         .join("") || "<span>No catalog match yet. Add more products for this outfit type.</span>"}
     </div>
   `;

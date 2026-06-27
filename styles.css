@@ -1301,6 +1301,12 @@ section[id] {
   text-transform: uppercase;
 }
 
+.affiliate-note {
+  background: #f4f4ef;
+  border-color: var(--line);
+  color: var(--muted);
+}
+
 .checkout-page {
   min-height: calc(100vh - 72px);
 }
