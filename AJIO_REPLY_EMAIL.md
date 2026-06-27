@@ -8,10 +8,10 @@ Thank you for the opportunity, and thank you to the AJIO Customer Care Team for 
 
 My name is Nikith Hegde, and I am building Harito, an AI-integrated fashion discovery and shopping platform focused on curated clothing, footwear, accessories, discount-first browsing, outfit guidance, and a premium buyer experience.
 
-Current preview website:
-https://brewpage.app/harito/2PkSeNO2VG
+Current website:
+https://harito.in/
 
-Harito is currently in preview while we prepare our final domain, business email, and vendor partnerships. We would love to explore how we can collaborate with AJIO in a way that matches your team's requirements. If AJIO has specific expectations for product display, brand guidelines, catalog structure, buyer flow, tracking, promotions, or content presentation, we can build the website experience exactly according to those requirements.
+Harito is currently in preview while we prepare vendor partnerships, approved catalog access, payment workflows, commission terms, and delivery responsibilities. We would love to explore how we can collaborate with AJIO in a way that matches your team's requirements. If AJIO has specific expectations for product display, brand guidelines, catalog structure, buyer flow, tracking, promotions, payment settlement, delivery ownership, or content presentation, we can build the website experience according to those requirements.
 
 We would also love to promote AJIO through Instagram and fashion-focused content. Our extended team has strong access to marketing and creative resources. One of our team member dashboards shows reach of around 200 million, and my aunt is the director of an international fashion designing university. Mr. India is also one of her students, which gives us access to fashion models, creative talent, cameramen, and styling support for high-quality brand promotion.
 
@@ -22,4 +22,4 @@ Please let me know the documents, proposal format, onboarding requirements, or n
 Regards,  
 Nikith Hegde  
 Harito  
-nikithhegde@gmail.com
+contact@harito.in

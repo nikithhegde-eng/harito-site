@@ -1,17 +1,10 @@
-const advisorProducts = [
-  { name: "Cotton Twill Overshirt", gender: "men", type: "Shirt", color: "Olive", url: "https://www2.hm.com/en_in/men/shop-by-product/shirts.html" },
-  { name: "Relaxed Linen Blend Shirt", gender: "men", type: "Shirt", color: "White", url: "https://www.zara.com/in/en/man-shirts-l737.html" },
-  { name: "Baggy Fit Jeans", gender: "women", type: "Baggy jeans", color: "Light blue", url: "https://www.flipkart.com/search?q=women%20baggy%20jeans" },
-  { name: "Oversized Cotton T Shirt", gender: "men", type: "Baggy t shirt", color: "White", url: "https://www.myntra.com/men-tshirts" },
-  { name: "Classic 574 Sneakers", gender: "women", type: "Sneaker", color: "Grey", url: "https://www.newbalance.com/women/shoes/" },
-  { name: "Everyday Sports Shoes", gender: "women", type: "Sports shoes", color: "White", url: "https://www.tatacliq.com/womens-footwear/c-msh1117100" },
-  { name: "Tailored Stretch Blazer", gender: "women", type: "Blazer", color: "Black", url: "https://www.marksandspencer.in/women/" },
-  { name: "Oversized Graphic T Shirt", gender: "men", type: "Baggy t shirt", color: "Black", url: "https://www.bonkerscorner.com/" },
-  { name: "Breathable Training T Shirt", gender: "men", type: "T shirt", color: "Blue", url: "https://www.decathlon.in/" },
-  { name: "Running Sports Shoes", gender: "men", type: "Sports shoes", color: "Black", url: "https://in.puma.com/" },
-  { name: "Compact Crossbody Bag", gender: "women", type: "Accessory", color: "Tan", url: "https://www.shoppersstop.com/" },
-  { name: "Relaxed Cotton Hoodie", gender: "women", type: "Top", color: "Grey", url: "https://www.bewakoof.com/" }
-];
+const advisorProducts = (window.HARITO_CATALOG || []).map((product) => ({
+  name: product.name,
+  gender: product.gender,
+  type: product.type,
+  color: product.color,
+  url: `cart.html?add=${encodeURIComponent(product.id)}`
+}));
 
 const form = document.querySelector("#advisorPageForm");
 const result = document.querySelector("#advisorPageResult");
@@ -67,7 +60,7 @@ form.addEventListener("submit", (event) => {
     <p>${colourAdvice(topColor, pantsColor, shoeColor)}</p>
     <div class="advisor-products">
       ${matches
-        .map((product) => `<a href="${product.url}" target="_blank" rel="noopener noreferrer">${product.name} · ${product.color}</a>`)
+        .map((product) => `<a href="${product.url}">${product.name} · ${product.color}</a>`)
         .join("") || "<span>No catalog match yet. Add more products for this outfit type.</span>"}
     </div>
   `;

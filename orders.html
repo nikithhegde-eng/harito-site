@@ -21,52 +21,55 @@
       <nav class="main-nav" aria-label="Primary navigation">
         <a href="index.html#collections">Collections</a>
         <a href="advisor.html">Dressing Advisor</a>
-        <a href="orders.html">Your Orders</a>
+        <a href="cart.html">Cart</a>
       </nav>
-      <a class="header-chip" href="index.html#returns">Return Form</a>
+      <a class="header-chip" href="index.html#collections">Shop Catalog</a>
     </header>
 
     <main>
-      <section class="page-hero">
+      <section class="page-hero orders-hero">
         <p class="eyebrow">Buyer account</p>
         <h1>Your orders</h1>
-        <p>
-          Buyers do not need a username and password in this first version. A backend version will identify orders
-          through verified email, phone, or payment/order ID.
-        </p>
+        <p>Search by email to see Harito order status, payment status, vendor confirmation, delivery, and returns.</p>
       </section>
 
       <section class="orders-panel">
-        <article class="order-card">
-          <img
-            src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=900&q=80"
-            alt="Relaxed Linen Blend Shirt"
-          />
-          <div>
-            <span class="order-status">Sample order</span>
-            <h2>Relaxed Linen Blend Shirt</h2>
-            <p>Order ID: H-1001 · Vendor: Zara India · Status: Delivered</p>
-            <a class="primary-link" href="https://www.zara.com/in/" target="_blank" rel="noopener noreferrer">
-              Return on supplier website
-            </a>
-          </div>
-        </article>
+        <form class="order-lookup-form" id="orderLookupForm">
+          <label>
+            Buyer email
+            <input name="email" type="email" autocomplete="email" placeholder="buyer@example.com" required />
+          </label>
+          <button class="primary-link" type="submit">Find orders</button>
+          <p class="checkout-message" id="ordersMessage" role="status" aria-live="polite"></p>
+        </form>
 
-        <article class="order-card">
-          <img
-            src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80"
-            alt="Printed Midi Dress"
-          />
-          <div>
-            <span class="order-status">Sample order</span>
-            <h2>Printed Midi Dress</h2>
-            <p>Order ID: H-1002 · Vendor: Tata CLiQ · Status: In transit</p>
-            <a class="primary-link" href="https://www.tatacliq.com/" target="_blank" rel="noopener noreferrer">
-              Return on supplier website
-            </a>
-          </div>
-        </article>
+        <div class="order-list" id="orderList" aria-live="polite"></div>
+      </section>
+
+      <section class="return-panel" id="returns">
+        <div class="section-heading">
+          <div class="section-kicker">Returns</div>
+          <h2>Request a return</h2>
+        </div>
+        <form class="return-form" id="returnRequestForm">
+          <label>
+            Order ID
+            <input name="orderId" type="text" placeholder="H-20260627-ABC123" required />
+          </label>
+          <label>
+            Buyer email
+            <input name="email" type="email" placeholder="buyer@example.com" required />
+          </label>
+          <label>
+            Reason for return
+            <textarea name="reason" rows="4" placeholder="Size issue, damaged item, wrong product..." required></textarea>
+          </label>
+          <button class="primary-link return-submit" type="submit">Send return request</button>
+          <p class="checkout-message" id="returnMessage" role="status" aria-live="polite"></p>
+        </form>
       </section>
     </main>
+
+    <script src="orders.js"></script>
   </body>
 </html>

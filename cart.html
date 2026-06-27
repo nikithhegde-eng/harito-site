@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harito | Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html#top" aria-label="Harito home">
+        <span class="brand-mark">ハリト</span>
+        <span>Harito</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html#collections">Collections</a>
+        <a href="advisor.html">Dressing Advisor</a>
+        <a href="orders.html">Your Orders</a>
+      </nav>
+      <a class="header-chip" href="index.html#collections">Continue shopping</a>
+    </header>
+
+    <main class="checkout-page">
+      <section class="page-hero checkout-hero">
+        <p class="eyebrow">Harito checkout</p>
+        <h1>Your cart</h1>
+        <p>
+          Place the order with Harito and track payment, vendor confirmation, delivery, and returns from one order ID.
+        </p>
+      </section>
+
+      <section class="checkout-layout" aria-label="Shopping cart and checkout">
+        <div class="cart-panel">
+          <div class="checkout-section-heading">
+            <p class="eyebrow">Selected items</p>
+            <h2>Cart items</h2>
+          </div>
+          <div class="cart-items" id="cartItems" aria-live="polite"></div>
+        </div>
+
+        <aside class="cart-summary-panel">
+          <div class="checkout-section-heading">
+            <p class="eyebrow">Order summary</p>
+            <h2>Checkout</h2>
+          </div>
+          <div class="cart-summary" id="cartSummary"></div>
+
+          <form class="checkout-form" id="checkoutForm">
+            <label>
+              Full name
+              <input name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Phone
+              <input name="phone" type="tel" autocomplete="tel" required />
+            </label>
+            <label>
+              Address
+              <input name="line1" autocomplete="address-line1" required />
+            </label>
+            <label>
+              Apartment, landmark
+              <input name="line2" autocomplete="address-line2" />
+            </label>
+            <label>
+              City
+              <input name="city" autocomplete="address-level2" required />
+            </label>
+            <label>
+              State
+              <input name="state" autocomplete="address-level1" required />
+            </label>
+            <label>
+              Pincode
+              <input name="pincode" inputmode="numeric" maxlength="6" autocomplete="postal-code" required />
+            </label>
+            <label>
+              Payment method
+              <select name="paymentMethod">
+                <option value="online">Online payment</option>
+                <option value="manual_upi">UPI after confirmation</option>
+              </select>
+            </label>
+            <button class="primary-link checkout-submit" type="submit">Place order</button>
+            <p class="checkout-message" id="checkoutMessage" role="status" aria-live="polite"></p>
+          </form>
+        </aside>
+      </section>
+    </main>
+
+    <div class="checkout-loading" id="checkout-loading" role="status" aria-live="polite" hidden>
+      <span class="checkout-spinner" aria-hidden="true"></span>
+      <strong>Creating Harito order</strong>
+      <p>Please wait while your cart is checked and saved.</p>
+    </div>
+
+    <script src="catalog.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>

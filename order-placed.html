@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harito | Order Placed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html#top" aria-label="Harito home">
+        <span class="brand-mark">ハリト</span>
+        <span>Harito</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html#collections">Collections</a>
+        <a href="orders.html">Your Orders</a>
+      </nav>
+      <a class="header-chip" href="cart.html">Back to cart</a>
+    </header>
+
+    <main class="result-page">
+      <section class="result-panel">
+        <span class="success-mark" aria-hidden="true">✓</span>
+        <p class="eyebrow">Harito order</p>
+        <h1>Order placed</h1>
+        <div class="order-result" id="orderResult" aria-live="polite">
+          <p>Loading your order details...</p>
+        </div>
+        <div class="result-actions">
+          <a class="primary-link" href="orders.html">Track order</a>
+          <a class="secondary-link" href="index.html#collections">Continue shopping</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="order-placed.js"></script>
+  </body>
+</html>

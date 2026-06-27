@@ -6,8 +6,8 @@ Use this file as the 3-day Shopify trial plan. Do not collect real payments for 
 
 1. Choose a clean free Shopify theme.
 2. Set store name to Harito.
-3. Add the updated preview link as the concept reference:
-   https://brewpage.app/harito/2PkSeNO2VG
+3. Add the live website as the concept reference:
+   https://harito.in/
 4. Import `shopify-products.csv` in Shopify Admin > Products > Import.
 5. Keep imported products as draft until vendor/supply permission is clear.
 6. Create collections:
@@ -21,7 +21,7 @@ Use this file as the 3-day Shopify trial plan. Do not collect real payments for 
 
 ## Day 2: Checkout Test
 
-1. Set contact email to nikithhegde@gmail.com.
+1. Set contact email to contact@harito.in.
 2. Add shipping zones and rates.
 3. Add return/refund policy.
 4. Use Shopify test mode before accepting real payments.
@@ -32,7 +32,7 @@ Use this file as the 3-day Shopify trial plan. Do not collect real payments for 
 1. Connect Harito preview buttons to Shopify product links or collections.
 2. Test on mobile.
 3. Ask 10-20 people whether the store feels trustworthy.
-4. Only continue paid Shopify after checkout, sourcing, delivery, and return handling are clear.
+4. Only continue paid Shopify after checkout, sourcing, commission, delivery, vendor payout, and return handling are clear.
 
 ## Suggested Store Policies
 
@@ -42,7 +42,7 @@ Harito is a curated fashion discovery store built to help shoppers compare style
 
 ### Contact
 
-For support, partnerships, or business inquiries, contact nikithhegde@gmail.com.
+For support, partnerships, or business inquiries, contact contact@harito.in.
 
 ### Return Policy Draft
 
@@ -50,4 +50,4 @@ Returns depend on the product source and fulfillment partner. For any order issu
 
 ### Vendor Note
 
-Harito should only publish real brand products after receiving affiliate approval, wholesale permission, dropshipping access, or another legal supply agreement.
+Harito should only publish real brand products after receiving affiliate approval, wholesale permission, dropshipping access, or another legal supply agreement. If Harito collects payment directly, vendor commission, payout timing, delivery ownership, and return deductions must be documented first.
